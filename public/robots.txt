@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cabinverify.com/sitemap.xml
