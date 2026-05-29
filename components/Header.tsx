@@ -18,6 +18,9 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-mist shadow-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,8 +37,9 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
                 className={`text-sm font-medium transition-colors ${
-                  pathname === link.href
+                  isActive(link.href)
                     ? "text-smoky-forest"
                     : "text-slate hover:text-smoky-forest"
                 }`}
@@ -80,8 +84,9 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
+                aria-current={isActive(link.href) ? "page" : undefined}
                 className={`text-sm font-medium py-2 px-3 rounded-sm transition-colors ${
-                  pathname === link.href
+                  isActive(link.href)
                     ? "bg-mist text-smoky-forest"
                     : "text-slate hover:text-smoky-forest hover:bg-mist"
                 }`}

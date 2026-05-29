@@ -36,6 +36,13 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    // Honeypot: if the hidden field is filled, it's a bot. Silently succeed.
+    if ((e.currentTarget as HTMLFormElement).website?.value) {
+      setSubmitted(true);
+      return;
+    }
+
     setSubmitting(true);
 
     // TODO: Connect to Formspree or similar — endpoint: https://formspree.io/f/YOUR_ID
@@ -76,7 +83,19 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Honeypot — hidden from users, catches bots. Not for humans. */}
+      <div className="absolute left-[-9999px]" aria-hidden="true">
+        <label htmlFor="website">Leave this field blank</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-hollow mb-1">
           Your name <span className="text-amber">*</span>

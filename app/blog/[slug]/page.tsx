@@ -319,7 +319,7 @@ export default async function BlogArticlePage({
             href="/blog"
             className="text-white/50 hover:text-white text-sm transition-colors mb-6 inline-block"
           >
-            ← CabinVerify Insights
+            ← Back to all articles
           </Link>
           <h1
             className="text-white text-3xl md:text-4xl font-bold mb-4"
