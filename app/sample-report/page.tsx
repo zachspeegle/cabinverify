@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Camera } from "lucide-react";
+import { Camera, Download } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import SectionWrapper from "@/components/SectionWrapper";
 import Badge from "@/components/Badge";
@@ -226,16 +226,18 @@ export default function SampleReportPage() {
 
           {/* Download CTA */}
           <div className="text-center mt-8">
-            {/* TODO: Replace placeholder with real PDF when available */}
             <a
               href="/sample-report.pdf"
+              download
+              target="_blank"
+              rel="noopener"
               className="inline-flex items-center gap-2 text-smoky-forest hover:text-ridge-night font-medium text-sm transition-colors"
             >
+              <Download size={16} aria-hidden="true" />
               Download the sample report (PDF)
             </a>
             <p className="text-slate/50 text-xs mt-1">
-              {/* PDF placeholder — replace /sample-report.pdf with the real file when ready */}
-              PDF version coming soon
+              4-page example — PDF, opens in a new tab
             </p>
           </div>
         </div>
