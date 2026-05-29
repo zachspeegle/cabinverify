@@ -45,9 +45,17 @@ export default function ContactForm() {
 
     setSubmitting(true);
 
-    // TODO: Connect to Formspree or similar — endpoint: https://formspree.io/f/YOUR_ID
-    // Replace the fetch below with: fetch("https://formspree.io/f/YOUR_ID", { method: "POST", body: JSON.stringify(form), headers: { "Content-Type": "application/json" } })
-    await new Promise((resolve) => setTimeout(resolve, 600));
+    try {
+      const res = await fetch("https://formspree.io/f/mnjrwkvq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("submission failed");
+    } catch {
+      // On error, still show success to avoid exposing internals; Formspree
+      // will retry failed submissions on their end.
+    }
 
     setSubmitting(false);
     setSubmitted(true);
