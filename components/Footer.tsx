@@ -1,5 +1,4 @@
 import Link from "next/link";
-import LogoSVG from "./LogoSVG";
 
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
@@ -17,7 +16,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <LogoSVG variant="white" />
+            <span className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: "var(--font-display)" }}>CabinVerify</span>
             <p
               className="mt-3 text-amber text-sm"
               style={{

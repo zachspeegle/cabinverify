@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import LogoSVG from "./LogoSVG";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -24,7 +23,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" aria-label="CabinVerify home">
-            <LogoSVG variant="dark" />
+            <span className="text-xl font-bold tracking-tight text-smoky-forest" style={{ fontFamily: "var(--font-display)" }}>CabinVerify</span>
           </Link>
 
           <nav

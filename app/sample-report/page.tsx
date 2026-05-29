@@ -4,7 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import SectionWrapper from "@/components/SectionWrapper";
 import Badge from "@/components/Badge";
 import Button from "@/components/Button";
-import LogoSVG from "@/components/LogoSVG";
 
 export const metadata: Metadata = {
   title: "Sample CabinVerify Report — See What You'll Receive",
@@ -67,7 +66,7 @@ export default function SampleReportPage() {
           <div className="bg-white border border-mist rounded shadow-sm overflow-hidden">
             {/* Report Header */}
             <div className="bg-ridge-night px-6 py-5 flex items-center justify-between flex-wrap gap-4">
-              <LogoSVG variant="white" />
+              <span className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: "var(--font-display)" }}>CabinVerify</span>
               <div className="text-right">
                 <p className="text-white/60 text-xs uppercase tracking-widest" style={{ fontFamily: "var(--font-sans)", fontSize: "10px" }}>
                   Verification Report
