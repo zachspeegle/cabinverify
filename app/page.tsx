@@ -108,7 +108,6 @@ export default function HomePage() {
         headline="Local Eyes. Neutral Proof."
         subhead="When you need to know if a reported issue is real — without calling a contractor."
         body="CabinVerify is a neutral third-party verification service for Smoky Mountain short-term rental owners and property managers. We visit. We document. You decide."
-        showMountains
         ctas={
           <>
             <Button variant="accent" href="/contact">

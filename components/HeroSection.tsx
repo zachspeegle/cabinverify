@@ -7,7 +7,6 @@ interface HeroSectionProps {
   ctas?: ReactNode;
   tagline?: string;
   dark?: boolean;
-  showMountains?: boolean;
   className?: string;
 }
 
@@ -18,41 +17,15 @@ export default function HeroSection({
   ctas,
   tagline,
   dark = true,
-  showMountains = false,
   className = "",
 }: HeroSectionProps) {
   return (
     <section
-      className={`relative overflow-hidden py-24 md:py-32 ${
+      className={`py-24 md:py-32 ${
         dark ? "bg-ridge-night" : "bg-mist"
       } ${className}`}
     >
-      {showMountains && (
-        <div
-          className="absolute inset-y-0 right-0 w-1/2 pointer-events-none"
-          aria-hidden="true"
-        >
-          <svg
-            viewBox="0 0 500 300"
-            className="w-full h-full"
-            preserveAspectRatio="xMaxYMax meet"
-            style={{ opacity: 0.07 }}
-          >
-            <polyline
-              points="0,300 60,160 110,220 180,80 250,190 320,50 380,150 440,90 500,130 500,300"
-              fill="white"
-              stroke="none"
-            />
-            <polyline
-              points="100,300 150,200 200,260 270,140 330,240 400,100 460,180 500,150 500,300"
-              fill="white"
-              stroke="none"
-              opacity="0.5"
-            />
-          </svg>
-        </div>
-      )}
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1
           className={`text-4xl md:text-5xl lg:text-6xl mb-6 ${
             dark ? "text-white" : "text-hollow"
